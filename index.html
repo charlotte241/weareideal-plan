@@ -4,98 +4,82 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>The £6,000 Question</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<title>Where We Are</title>
 <style>
+  /* Ideal Urban brand book 2025. Palette and type used exactly as specified. */
   :root{
-    --ground:#F6EDEA; --paper:#fff; --paper2:#FBF6F3;
-    --ink:#1E242C; --ink2:#4F5A66; --ink3:#7B8591;
-    --line:#E3D9D3; --line2:#D1C6BF;
-    --blue:#51657D; --blue-ink:#3E5066; --blue-soft:#E3EBF3;
-    --green:#3F6B57; --green-soft:#E6F0EA;
-    --terra:#DB7D59; --terra-ink:#A8512F; --terra-soft:#F8E3D9;
-    --gate:#2B3440;
-    --sans:"Source Sans 3",Calibri,"Segoe UI",system-ui,sans-serif;
+    --offwhite:#F6EDEA;
+    --urban-green:#9DB4AB;
+    --green:#A7D8BC;
+    --urban-blue:#51657D;
+    --blue:#84B1D4;
+    --terra:#DB7D59;
+    --black:#000000;
+    --paper:#FFFFFF;
     --serif:Georgia,"Times New Roman",serif;
-    --shadow:0 1px 2px rgba(30,36,44,.05),0 10px 30px rgba(30,36,44,.07);
+    --sans:Calibri,Carlito,"Segoe UI",system-ui,-apple-system,sans-serif;
+    --mute:rgba(0,0,0,.62);
+    --faint:rgba(0,0,0,.45);
+    --rule:rgba(81,101,125,.22);
+    --rule2:rgba(81,101,125,.4);
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-    --ground:#141920;--paper:#1C232C;--paper2:#222A34;--ink:#ECE6E1;--ink2:#B6BEC8;--ink3:#8791A0;
-    --line:#2E3742;--line2:#3B4653;--blue:#84B1D4;--blue-ink:#A9CBE6;--blue-soft:#243546;
-    --green:#A7D8BC;--green-soft:#21362D;--terra:#E0906F;--terra-ink:#F0B296;--terra-soft:#452B21;
-    --gate:#0E1218;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);}}
+    --offwhite:#2A343F; --paper:#333E4A; --black:#F6EDEA;
+    --mute:rgba(246,237,234,.72); --faint:rgba(246,237,234,.55);
+    --rule:rgba(157,180,171,.28); --rule2:rgba(157,180,171,.45);
+    --urban-blue:#84B1D4;
+  }}
   :root[data-theme="dark"]{
-    --ground:#141920;--paper:#1C232C;--paper2:#222A34;--ink:#ECE6E1;--ink2:#B6BEC8;--ink3:#8791A0;
-    --line:#2E3742;--line2:#3B4653;--blue:#84B1D4;--blue-ink:#A9CBE6;--blue-soft:#243546;
-    --green:#A7D8BC;--green-soft:#21362D;--terra:#E0906F;--terra-ink:#F0B296;--terra-soft:#452B21;
-    --gate:#0E1218;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0;text-wrap:balance}
-  p{margin:0}
-  .wrap{max-width:1000px;margin:0 auto;padding:44px 26px 90px}
-  .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-ink);margin-bottom:10px}
-  h1{font-size:40px;margin-bottom:10px}
-  .sub{color:var(--ink2);font-size:17px;max-width:62ch;margin-bottom:34px}
-
-  .gate{background:var(--gate);color:#EDE7E2;border-radius:14px;padding:26px 30px;margin-bottom:34px}
-  .gate h2{font-size:23px;color:#fff;margin-bottom:10px}
-  .gate p{color:#C3CCD6;font-size:15.5px;max-width:70ch}
-  .gate .big{font-family:var(--serif);font-size:34px;color:var(--terra);display:block;margin:14px 0 4px}
-
-  h2.sec{font-size:26px;margin:40px 0 6px;padding-top:22px;border-top:1px solid var(--line2)}
-  .secsub{color:var(--ink3);font-size:15px;margin-bottom:18px}
-
-  table{width:100%;border-collapse:collapse;margin-bottom:6px;font-size:15.5px}
-  th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);padding:0 12px 9px 0;border-bottom:1px solid var(--line2)}
-  th.n,td.n{text-align:right}
-  td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
-  td.m{font-weight:600}
-  td.now{color:var(--ink2);font-variant-numeric:tabular-nums}
-  td.tgt{color:var(--blue-ink);font-weight:700;font-variant-numeric:tabular-nums}
-  td.when{color:var(--terra-ink);font-size:14px;white-space:nowrap}
-  tr.flat td.tgt{color:var(--ink2)}
-
-  .hint{background:var(--paper2);border-left:3px solid var(--blue);border-radius:0 9px 9px 0;padding:14px 18px;margin:14px 0 4px;font-size:14.5px;color:var(--ink2);line-height:1.55}
-  .hint b{color:var(--ink);font-weight:700;display:block;margin-bottom:5px;font-size:12px;letter-spacing:.09em;text-transform:uppercase}
-  .hint ul{margin:0;padding-left:18px} .hint li{margin:5px 0}
-
-  .warn{background:var(--terra-soft);border:1px solid var(--terra);border-radius:11px;padding:18px 22px;margin:22px 0;color:var(--terra-ink);font-size:15px;line-height:1.5}
-  .warn b{font-weight:700}
-
-  .band{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 6px}
-  .stat{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:15px 17px;box-shadow:var(--shadow)}
-  .stat .k{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
-  .stat .v{font-family:var(--serif);font-size:27px;line-height:1.1}
-  .stat .d{font-size:12.5px;color:var(--ink3);margin-top:4px}
-  .stat.up .v{color:var(--green)} .stat.down .v{color:var(--terra-ink)}
-
-  .src{font-size:12.5px;color:var(--ink3);font-style:italic;margin-top:8px}
-  footer{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink3)}
-  @media(max-width:640px){
-    .wrap{padding:26px 16px 70px} h1{font-size:30px}
-    table{font-size:14px} td,th{padding-right:8px}
+    --offwhite:#2A343F; --paper:#333E4A; --black:#F6EDEA;
+    --mute:rgba(246,237,234,.72); --faint:rgba(246,237,234,.55);
+    --rule:rgba(157,180,171,.28); --rule2:rgba(157,180,171,.45);
+    --urban-blue:#84B1D4;
   }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--offwhite);color:var(--black);font-family:var(--sans);font-size:17px;line-height:1.55}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
+  p{margin:0}
+  .wrap{max-width:940px;margin:0 auto;padding:40px 24px 80px}
 
-  .calc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:18px 0;box-shadow:var(--shadow)}
-  .calc h3{font-family:var(--serif);font-size:20px;margin:0 0 4px}
-  .calc .note{font-size:13.5px;color:var(--ink3);margin-bottom:14px}
-  .row{display:grid;grid-template-columns:1fr 92px 110px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
-  .row:last-child{border-bottom:none}
-  .row label{font-size:14.5px}
-  .row label small{display:block;color:var(--ink3);font-size:12.5px}
-  .row input,.row select{width:100%;font:inherit;font-size:15px;text-align:right;padding:7px 9px;border:1px solid var(--line2);border-radius:7px;background:var(--paper2);color:var(--ink);font-variant-numeric:tabular-nums}
-  .row select{text-align:left;font-size:13.5px}
-  .row .out{text-align:right;font-weight:700;color:var(--blue-ink);font-variant-numeric:tabular-nums;font-size:15px}
-  .row.wide{grid-template-columns:1fr 210px}
-  .tot{background:var(--gate);color:#fff;border-radius:12px;padding:20px 24px;margin-top:20px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:baseline}
-  .tot .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C3CCD6}
-  .tot .v{font-family:var(--serif);font-size:38px;line-height:1;display:block;margin-top:4px}
-  .tot .gap.short .v{color:var(--terra)} .tot .gap.clear .v{color:#A7D8BC}
-  .savebar{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:13px;color:var(--ink3)}
-  .savebar button{font:inherit;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer}
-  .savebar button:disabled{opacity:.5;cursor:default}
-  @media(max-width:620px){.row,.row.wide{grid-template-columns:1fr 84px}.row .out{grid-column:1/-1;text-align:left}}
+  .mark{font-family:var(--serif);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--urban-blue);margin-bottom:26px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+  h1{font-size:42px;margin-bottom:12px}
+  .sub{color:var(--mute);font-size:18px;max-width:58ch;margin-bottom:30px}
+
+  .goal{background:var(--urban-blue);color:#fff;border-radius:4px;padding:26px 30px;margin-bottom:12px}
+  .goal .k{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+  .goal .big{font-family:var(--serif);font-size:36px;display:block;margin:8px 0 6px}
+  .goal p{color:rgba(255,255,255,.85);font-size:16px;max-width:62ch}
+
+  h2.sec{font-size:27px;margin:44px 0 4px;padding-top:22px;border-top:2px solid var(--rule2)}
+  .secsub{color:var(--faint);font-size:15px;margin-bottom:16px}
+
+  table{width:100%;border-collapse:collapse;font-size:16px}
+  th{text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 14px 8px 0;border-bottom:1px solid var(--rule2)}
+  th.n,td.n{text-align:right}
+  td{padding:11px 14px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+  td.m{font-weight:700;width:38%}
+  td.s{color:var(--faint);font-size:14.5px;white-space:nowrap}
+  td.c{font-weight:700;color:var(--urban-blue);font-variant-numeric:tabular-nums}
+
+  .ask{background:var(--paper);border-left:4px solid var(--urban-green);border-radius:0 4px 4px 0;padding:16px 20px;margin:12px 0}
+  .ask b{display:block;font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:6px}
+  .ask ul{margin:0;padding-left:18px;color:var(--mute);font-size:16px}
+  .ask li{margin:6px 0}
+
+  .note{border:1px solid var(--terra);border-radius:4px;padding:16px 20px;margin:20px 0;font-size:16px;color:var(--black);background:rgba(219,125,89,.09)}
+
+  .ph{background:var(--paper);border:1px solid var(--rule2);border-radius:4px;padding:20px 24px;margin:14px 0}
+  .ph h3{font-size:22px;margin-bottom:2px}
+  .ph .when{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+  .ph ul{margin:0;padding-left:18px;font-size:16px}
+  .ph li{margin:6px 0}
+  .ph .open{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule);font-size:15px;color:var(--mute)}
+  .ph .open b{color:var(--black)}
+
+  .src{font-size:14px;color:var(--faint);margin-top:10px}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--faint)}
+  @media(max-width:620px){.wrap{padding:24px 16px 60px}h1{font-size:31px}body{font-size:16px}td.m{width:auto}table{font-size:15px}td,th{padding-right:8px}}
 </style>
 </head>
 <body>
@@ -103,102 +87,119 @@
 
 <div class="wrap">
 
-<div class="eyebrow">We Are Ideal &middot; Working document &middot; 23 September 2026</div>
-<h1>The £6,000 question</h1>
-<p class="sub">What we know so far, what we still need from you, and what goes into each phase. Nothing here is decided. It is a place to keep the answers as they arrive.</p>
+<div class="mark">We Are Ideal</div>
+
+<div class="eyebrow">Working document &middot; updated 23 September 2026</div>
+<h1>Where we are</h1>
+<p class="sub">What we know, what we still need from you, and what each phase holds. Nothing here is decided. It is the place the answers get kept as they arrive.</p>
+
+<div class="goal">
+  <span class="k">The number you set</span>
+  <span class="big">£6,000 a month of new profit</span>
+  <p>£3,000 each, by 31 December. Everything below is judged against it.</p>
+</div>
 
 <h2 class="sec">What we know</h2>
-<p class="secsub">Every line here came from you or from your own records.</p>
+<p class="secsub">Every line came from you or from your own records.</p>
 <table>
 <tr><th>What</th><th>Where it came from</th></tr>
-<tr><td class="m">£6,000 a month of new profit, £3,000 each, by 31 December</td><td>Your number</td></tr>
-<tr><td class="m">SPE nets about £1,754 a month</td><td>Your half-year accounts to June</td></tr>
-<tr><td class="m">14 sponsors paying about £1,019 a month. Five main, nine marketplace</td><td>Lisa, September</td></tr>
-<tr><td class="m">One of the six main sponsor categories is unsold</td><td>Lisa, September</td></tr>
-<tr><td class="m">An in person ticket averages £30.97. A member pass is £144 for six meetings. A Zoom ticket is £14.99</td><td>Your attendance sheet and the September event</td></tr>
-<tr><td class="m">The paying core of the room is 38 to 42, not 60</td><td>Your 2026 attendance sheet</td></tr>
-<tr><td class="m">Management income and team cost are about level, so managing property is close to break-even today</td><td>Mithila, on the September call</td></tr>
-<tr><td class="m">109 people came once in fourteen months. 19 of them came back. 90 never did</td><td>Your attendance sheets</td></tr>
-<tr><td class="m">82 different businesses appear in your attendance records. About 18 of them already pay to attend</td><td>Your attendance sheets</td></tr>
-<tr><td class="m">Registered providers are for buying and developing. HMO landlords are a separate list, reached by letter</td><td>Lisa, September</td></tr>
-<tr><td class="m">Zoom has produced two refunds and complaints</td><td>Lisa, September</td></tr>
-<tr><td class="m">Team streamlining worth about £1,000 a month is in train</td><td>Mithila</td></tr>
+<tr><td class="m">SPE made £10,525 before tax in the first half of the year. About £1,754 a month</td><td class="s">Mithila, September</td></tr>
+<tr><td class="m">Tickets and membership £13,247. Sponsorship £7,973. Costs £6,597. Overheads £4,098</td><td class="s">Mithila, September</td></tr>
+<tr><td class="m">14 sponsors paying about £1,019 a month. Five main, nine marketplace</td><td class="s">Lisa, September</td></tr>
+<tr><td class="m">One of the six main sponsor categories is unsold</td><td class="s">Lisa, September</td></tr>
+<tr><td class="m">An in person ticket averages £30.97. A member pass is £144 for six meetings. Zoom is £14.99</td><td class="s">Your attendance sheet</td></tr>
+<tr><td class="m">The paying core of the room is 38 to 42</td><td class="s">Your 2026 attendance sheet</td></tr>
+<tr><td class="m">109 people came once in fourteen months. 19 came back. 90 never did</td><td class="s">Your attendance sheets</td></tr>
+<tr><td class="m">82 different businesses appear in your records. About 18 already pay to attend</td><td class="s">Your attendance sheets</td></tr>
+<tr><td class="m">Management income and team costs are about level, so managing property is close to break even today</td><td class="s">Mithila, September</td></tr>
+<tr><td class="m">Registered providers are for buying and developing. HMO landlords are a separate list, reached by letter</td><td class="s">Lisa, September</td></tr>
+<tr><td class="m">Zoom has produced two refunds and complaints about the experience</td><td class="s">Lisa, September</td></tr>
+<tr><td class="m">Team streamlining worth about £1,000 a month is in train</td><td class="s">Mithila</td></tr>
 </table>
 
-
+<div class="note">
+<b>One thing to hold on to.</b> Sponsorship is already your second largest income line and it has never been priced. That is the shortest distance between where you are and the number you set.
+</div>
 
 <h2 class="sec">What we still need from you</h2>
-<p class="secsub">These are the only things stopping the next step.</p>
+<p class="secsub">These are the only things holding up the next step.</p>
 
-<div class="hint"><b>Sponsorship</b>
+<div class="ask"><b>Sponsorship</b>
 <ul>
 <li>What does each of the fourteen get today?</li>
-<li>Which sponsors pay monthly, which pay annually, and when does each renew?</li>
-<li>What would you pay for a year in front of forty property people, if you were buying rather than selling?</li>
-</ul>
-</div>
+<li>Which pay monthly, which pay annually, and when does each renew?</li>
+<li>What would a year in front of your room be worth if you were buying it rather than selling it?</li>
+</ul></div>
 
-<div class="hint"><b>Property</b>
+<div class="ask"><b>Property</b>
 <ul>
 <li>How many rooms do you manage now?</li>
-<li>Can the current team take on more rooms without growing? That decides whether a new property is worth a lot or almost nothing.</li>
-<li>How many new properties is realistic by 31 December?</li>
-</ul>
-</div>
+<li>Can the team take on more without growing? That decides whether a new property is worth a lot or almost nothing.</li>
+<li>How many new ones are realistic by 31 December?</li>
+</ul></div>
 
-<div class="hint"><b>The room</b>
+<div class="ask"><b>The room</b>
 <ul>
-<li>How does the £13,247 of tickets and membership split between the two?</li>
-<li>Who chases the people who came once and did not come back?</li>
-</ul>
-</div>
+<li>How does the £13,247 split between tickets and membership?</li>
+<li>Could we see the attendance register from March onwards?</li>
+<li>Who follows up the people who came once and did not come back?</li>
+</ul></div>
 
-<div class="hint"><b>Between the two of you</b>
+<div class="ask"><b>Between the two of you</b>
 <ul>
-<li>Who owns sponsorship end to end, the selling and the record of what was sold?</li>
-</ul>
+<li>Who owns what, which Lisa has asked to settle with Mithila.</li>
+</ul></div>
+
+<h2 class="sec">The three phases</h2>
+<p class="secsub">Named by what each one achieves, so they hold whatever the date is.</p>
+
+<div class="ph">
+  <div class="when">Phase one &middot; in progress</div>
+  <h3>Know the numbers</h3>
+  <ul>
+    <li>What each sponsor gets, then what it is worth, then the rate card</li>
+    <li>What one more managed property is actually worth</li>
+    <li>Zoom either fixed so it works, or off sale</li>
+    <li>Letters out to HMO landlords</li>
+    <li>One name against each part of the business</li>
+  </ul>
+  <div class="open"><b>Done when:</b> the prices are set, the property number exists, and nothing has two owners.</div>
 </div>
 
-<h2 class="sec">Phase one &middot; now to 31 December</h2>
-<p class="secsub">Know the numbers, set the prices. Nothing here needs a new customer.</p>
-<table>
-<tr><td class="m">Sponsorship</td><td>What each of the fourteen gets, then the rate card, then the five main sponsors moved onto it.</td></tr>
-<tr><td class="m">Property</td><td>Work out what one more is worth. Letters out to HMO landlords from November.</td></tr>
-<tr><td class="m">Zoom</td><td>Fixed so it works, or taken off sale.</td></tr>
-<tr><td class="m">People who came once</td><td>One person owns chasing them. Nobody does at the moment.</td></tr>
-<tr><td class="m">Between you</td><td>Who owns what, which Lisa has asked to settle with Mithila.</td></tr>
-<tr><td class="m">Not decided yet</td><td>What one more property is worth, what sponsors should pay, and who owns what.</td></tr>
-</table>
+<div class="ph">
+  <div class="when">Phase two &middot; next</div>
+  <h3>Make the money</h3>
+  <ul>
+    <li>Sponsorship sold at the new prices, starting with the unsold category and the 18 suppliers already in the room</li>
+    <li>The landlord letters converting</li>
+    <li>Registered provider conversations feeding your own developments</li>
+    <li>The lease decision, which is parked until after Christmas and is larger than everything else here</li>
+  </ul>
+  <div class="open"><b>Not decided yet:</b> whether £6,000 lands inside this phase. That depends on the Phase one answers.</div>
+</div>
 
-<h2 class="sec">Phase two &middot; January to June 2027</h2>
-<p class="secsub">Where the money actually lands.</p>
-<table>
-<tr><td class="m">Sponsorship</td><td>Sold at the new prices, including the unsold sixth category. The 82 businesses already in your records are the prospect list.</td></tr>
-<tr><td class="m">Landlords</td><td>The November letters converting across the half year.</td></tr>
-<tr><td class="m">Registered providers</td><td>Lisa's call list, feeding your own developments.</td></tr>
-<tr><td class="m">The lease</td><td>The decision parked until after Christmas. Nearly all current profit sits in it.</td></tr>
-<tr><td class="m">Not decided yet</td><td>Whether £6,000 is reachable here. That depends on the Phase One answers.</td></tr>
-</table>
+<div class="ph">
+  <div class="when">Phase three &middot; later</div>
+  <h3>Realise the value</h3>
+  <ul>
+    <li>Development revenue once the current scheme completes and the end use is settled</li>
+    <li>Student landlords, whose tenancies turn over between March and May and who choose a manager then</li>
+    <li>The lettings valuation and exit, on a book that has grown</li>
+  </ul>
+</div>
 
-<h2 class="sec">Phase three &middot; July 2027 onward</h2>
-<table>
-<tr><td class="m">Development</td><td>Revenue from the completed scheme, once the end use is settled.</td></tr>
-<tr><td class="m">Student landlords</td><td>Student tenancies in Guildford turn over between March and May 2027, which is when those landlords decide who manages them. Build the relationships now.</td></tr>
-<tr><td class="m">Lettings</td><td>The valuation and exit conversation, on a book that has grown.</td></tr>
-</table>
-
-<h2 class="sec">If you want any of it done for you</h2>
+<h2 class="sec">If you would rather we did any of it</h2>
 <table>
 <tr><th>Item</th><th class="n">Credits</th></tr>
-<tr><td class="m">Sponsor rate card</td><td class="tgt n">2.75</td></tr>
-<tr><td class="m">Sponsor prospect list</td><td class="tgt n">2.5</td></tr>
-<tr><td class="m">Follow-up emails for people who came once</td><td class="tgt n">4.75</td></tr>
-<tr><td class="m">An extra session in a month</td><td class="tgt n">1.5</td></tr>
+<tr><td class="m">Sponsor rate card</td><td class="c n">2.75</td></tr>
+<tr><td class="m">Sponsor prospect list</td><td class="c n">2.5</td></tr>
+<tr><td class="m">Follow up emails for people who came once</td><td class="c n">4.75</td></tr>
+<tr><td class="m">An extra session in a month</td><td class="c n">1.5</td></tr>
 </table>
-<p class="src">All of these are yours to do for nothing. These are the prices if you would rather we did. Ask about any of them and we will talk it through. 1 credit = £100.</p>
+<p class="src">All of these are yours to do for nothing. These are the prices if you would rather we did. Ask about any of them and we will talk it through. One credit is £100.</p>
 
 <footer>
-The Sourc3 for Ideal Urban Ltd. Figures from your 2026 attendance workbook, your half-year accounts to June 2026, and Lisa's sponsor figures of September 2026.
+The Sourc3 for Ideal Urban Ltd. Where property and purpose meet.
 </footer>
 
 </div>
