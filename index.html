@@ -76,6 +76,26 @@
     .wrap{padding:26px 16px 70px} h1{font-size:30px}
     table{font-size:14px} td,th{padding-right:8px}
   }
+
+  .calc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:18px 0;box-shadow:var(--shadow)}
+  .calc h3{font-family:var(--serif);font-size:20px;margin:0 0 4px}
+  .calc .note{font-size:13.5px;color:var(--ink3);margin-bottom:14px}
+  .row{display:grid;grid-template-columns:1fr 92px 110px;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .row label{font-size:14.5px}
+  .row label small{display:block;color:var(--ink3);font-size:12.5px}
+  .row input,.row select{width:100%;font:inherit;font-size:15px;text-align:right;padding:7px 9px;border:1px solid var(--line2);border-radius:7px;background:var(--paper2);color:var(--ink);font-variant-numeric:tabular-nums}
+  .row select{text-align:left;font-size:13.5px}
+  .row .out{text-align:right;font-weight:700;color:var(--blue-ink);font-variant-numeric:tabular-nums;font-size:15px}
+  .row.wide{grid-template-columns:1fr 210px}
+  .tot{background:var(--gate);color:#fff;border-radius:12px;padding:20px 24px;margin-top:20px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:baseline}
+  .tot .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C3CCD6}
+  .tot .v{font-family:var(--serif);font-size:38px;line-height:1;display:block;margin-top:4px}
+  .tot .gap.short .v{color:var(--terra)} .tot .gap.clear .v{color:#A7D8BC}
+  .savebar{display:flex;gap:10px;align-items:center;margin-top:12px;font-size:13px;color:var(--ink3)}
+  .savebar button{font:inherit;font-weight:600;padding:8px 16px;border-radius:8px;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer}
+  .savebar button:disabled{opacity:.5;cursor:default}
+  @media(max-width:620px){.row,.row.wide{grid-template-columns:1fr 84px}.row .out{grid-column:1/-1;text-align:left}}
 </style>
 </head>
 <body>
@@ -85,7 +105,7 @@
 
 <div class="eyebrow">We Are Ideal &middot; Working document &middot; 23 September 2026</div>
 <h1>The £6,000 question</h1>
-<p class="sub">£3,000 each a month by 31 December. Below is what you keep on each thing you sell, and the three sums that decide whether £6,000 is reachable. The numbers in the sums are yours to put down, not ours.</p>
+<p class="sub">£3,000 each a month by 31 December. Put your own numbers into the boxes below and the page works out whether it adds up. Where we are not certain of a figure, we have left it for you to change.</p>
 
 <div class="gate">
   <h2>Where you are today</h2>
@@ -94,54 +114,46 @@
   <p>That is the gap. Everything below is a way of closing part of it.</p>
 </div>
 
-<h2 class="sec">What you actually keep</h2>
-<p class="secsub">Not what you charge. What is left after the room costs money to put on. Your direct SPE costs are £1,100 a month and about 61 people are in the room, so every head in that room costs roughly £18.</p>
-<table>
-<tr><th>Line</th><th class="n">You charge</th><th class="n">Costs you</th><th class="n">You keep</th><th class="n">How many more?</th></tr>
-<tr><td class="m">A paid ticket</td><td class="now n">£30.97</td><td class="now n">£18.12</td><td class="tgt n">£12.85</td><td class="now n">&nbsp;</td></tr>
-<tr><td class="m">A member, per meeting</td><td class="now n">£24.00</td><td class="now n">£18.12</td><td class="tgt n">£5.88</td><td class="now n">&nbsp;</td></tr>
-<tr><td class="m">A Zoom ticket</td><td class="now n">£14.99</td><td class="now n">near nil</td><td class="tgt n">~£15</td><td class="now n">&nbsp;</td></tr>
-<tr><td class="m">A sponsor, above today</td><td class="now n">your rate card</td><td class="now n">nil</td><td class="tgt n">all of it</td><td class="now n">&nbsp;</td></tr>
-<tr><td class="m">Cost taken out of the team</td><td class="now n">&nbsp;</td><td class="now n">&nbsp;</td><td class="tgt n">£1,000 in train</td><td class="now n">&nbsp;</td></tr>
-</table>
-<p class="src">Ticket price is every paid ticket across January to March 2026 from your attendance sheet. Cost per head is your £6,597 of direct SPE costs for the half year, divided by six months and by the 61 people in the room. A member is £144 for six meetings. Zoom carries no venue or catering cost, so nearly all of it is kept. Sponsorship is paid whether or not anyone turns up, so it carries no extra cost per head.</p>
+<h2 class="sec">Work it out</h2>
+<p class="secsub">Change any number below and the total updates. The prices in grey are from your own accounts. The white boxes are yours to fill in.</p>
 
-<div class="warn">
-<b>The room cannot produce £6,000.</b> At £12.85 a ticket you would need 467 more paid tickets every month. The room holds sixty. Seven more paid tickets and twelve more members, which would be a good year, comes to about £160 a month. Tickets and membership are worth doing because they hold the room together. They are not where the money is.
+<div class="calc">
+  <h3>The room</h3>
+  <p class="note">A head in the room costs you about £18, so this is what you keep, not what you charge. Change the cost if £18 is wrong.</p>
+  <div class="row"><label>Cost per head<small>£1,100 of direct costs, 61 in the room</small></label><input id="cph" type="number" step="0.5" value="18.12"><span class="out" id="o_cph"></span></div>
+  <div class="row"><label>Extra paid tickets an event<small>you charge £30.97</small></label><input id="tix" type="number" value="0"><span class="out" id="o_tix"></span></div>
+  <div class="row"><label>Extra members<small>£144 for six meetings, so £24 each</small></label><input id="mem" type="number" value="0"><span class="out" id="o_mem"></span></div>
+  <div class="row"><label>Zoom tickets an event<small>£14.99, almost no cost to serve</small></label><input id="zoom" type="number" value="0"><span class="out" id="o_zoom"></span></div>
 </div>
 
-<h2 class="sec">So where does £6,000 come from?</h2>
-<p class="secsub">Three places, and only two of them are inside your control before Christmas. Work these out in this order.</p>
-
-<div class="hint"><b>Sum one &middot; what one more property is worth</b>
-<ul>
-<li>Management income is about £4,500 a month. Divide it by your number of rooms. That is income per room.</li>
-<li>Now the same for team cost. Mithila says the two are about level, so start there.</li>
-<li>The question is not what a room earns. It is whether the current team can take on more rooms without growing. If they can, a new room is worth close to the full fee. If they cannot, it is worth almost nothing.</li>
-<li><b>Write down one number:</b> what one more managed property adds to profit each month.</li>
-</ul>
+<div class="calc">
+  <h3>Sponsorship</h3>
+  <p class="note">Sponsors pay whether or not anyone turns up, so every pound above today is a pound kept.</p>
+  <div class="row"><label>What the fourteen pay now<small>five main, nine marketplace</small></label><input id="spnow" type="number" value="1019"><span class="out"></span></div>
+  <div class="row"><label>What they should pay<small>your rate card, once you have set it</small></label><input id="sptgt" type="number" value="1019"><span class="out" id="o_spon"></span></div>
 </div>
 
-<div class="hint"><b>Sum two &middot; what sponsorship is worth</b>
-<ul>
-<li>Fourteen sponsors pay about £1,019 a month between them. Five main, nine marketplace.</li>
-<li>Go through them one at a time and write down what each one gets today.</li>
-<li>Then ask the other way round: if you were buying a year in front of forty property people, what would you pay?</li>
-<li><b>Write down one number:</b> what the fourteen should be paying, and what the unsold sixth category is worth.</li>
-</ul>
+<div class="calc">
+  <h3>Property</h3>
+  <p class="note">The question is not what a room earns. It is whether the team can take on more rooms without growing.</p>
+  <div class="row"><label>Rooms you manage</label><input id="rooms" type="number" value="80"><span class="out"></span></div>
+  <div class="row"><label>Management income a month</label><input id="mgmt" type="number" value="4500"><span class="out" id="o_perroom"></span></div>
+  <div class="row"><label>Team cost a month</label><input id="tcost" type="number" value="4500"><span class="out"></span></div>
+  <div class="row wide"><label>Can the team take more on?</label><select id="absorb"><option value="1">Yes, there is capacity</option><option value="0.5" selected>Some capacity</option><option value="0">No, every room adds cost</option></select></div>
+  <div class="row"><label>Rooms per property<small>a five bed HMO is five</small></label><input id="rpp" type="number" value="5"><span class="out" id="o_perprop"></span></div>
+  <div class="row"><label>New properties by 31 December</label><input id="nprop" type="number" value="0"><span class="out" id="o_prop"></span></div>
 </div>
 
-<div class="hint"><b>Sum three &middot; the lease</b>
-<ul>
-<li>Nearly all current profit sits in it, and you have parked the conversation until after Christmas.</li>
-<li>If the first two sums do not reach £6,000, this is the only lever left that is big enough.</li>
-<li><b>Write down one number:</b> what moving the lease would be worth, and whether after Christmas is still the right time.</li>
-</ul>
+<div class="calc">
+  <h3>Cost coming out</h3>
+  <div class="row"><label>Team streamlining already in train</label><input id="save" type="number" value="1000"><span class="out" id="o_save"></span></div>
 </div>
 
-<div class="warn">
-<b>Three numbers and you have a plan.</b> Property, sponsorship, lease. Everything else on this page is worth a few hundred pounds a month and can be decided later. Forty five minutes, the two of you, in that order.
+<div class="tot">
+  <div><span class="k">Adds up to</span><span class="v" id="o_total">£0</span></div>
+  <div class="gap" id="gapbox"><span class="k">Against £6,000</span><span class="v" id="o_gap">£6,000 short</span></div>
 </div>
+<div class="savebar"><button id="savebtn">Save these numbers</button><span id="savemsg">Saved on this page for both of you.</span></div>
 
 <h2 class="sec">What changed after your note</h2>
 <table>
@@ -203,21 +215,6 @@
 </table>
 <p class="src">Every one of these is yours to do for nothing. These are the prices if you would rather hand them over. 1 credit = £100.</p>
 
-<h2 class="sec">The maths, plainly</h2>
-<p class="secsub">Before the phases, here is what £6,000 breaks into.</p>
-<table>
-<tr><th>Line</th><th class="n">A month</th><th>Where it comes from</th></tr>
-<tr><td class="m">Team cost coming out</td><td class="tgt n">£1,000</td><td>Already in train</td></tr>
-<tr><td class="m">A good year in the room</td><td class="tgt n">£160</td><td>Seven more paid tickets at £12.85, twelve more members at £5.88</td></tr>
-<tr><td class="m">Zoom, once it works</td><td class="tgt n">£75</td><td>Five tickets an event</td></tr>
-<tr><td class="m">Leaves</td><td class="tgt n">£4,765</td><td><b>From sponsorship and property, and nowhere else</b></td></tr>
-</table>
-<p class="src">Sponsorship is £1,019 a month today. If you doubled it, that is another £1,019, and £3,746 a month would still have to come from property. At £300 a property that is twelve properties. Lisa's view is that twelve is not realistic before Christmas.</p>
-
-<div class="warn">
-<b>Which means £6,000 a month is not a December number.</b> It is reachable, but the work that produces it runs into 2027. What December can do is settle the prices, the owners and the numbers so that the money is earnable from January. Phase One below is that groundwork, and it is worth roughly £1,700 a month plus whatever the new sponsor prices add.
-</div>
-
 <h2 class="sec">Phase one &middot; now to 31 December</h2>
 <p class="secsub">Know the numbers. Set the prices. Nothing here needs a new customer.</p>
 <table>
@@ -251,6 +248,67 @@ The Sourc3 for Ideal Urban Ltd. Figures from the 2026 attendance workbook, the h
 </footer>
 
 </div>
+
+<script>
+(function(){
+  var ids=["cph","tix","mem","zoom","spnow","sptgt","rooms","mgmt","tcost","absorb","rpp","nprop","save"];
+  function n(id){var e=document.getElementById(id);var v=parseFloat(e.value);return isNaN(v)?0:v;}
+  function gbp(v){return (v<0?"-":"")+"£"+Math.abs(Math.round(v)).toLocaleString();}
+  function calc(){
+    var cph=n("cph");
+    var tix=n("tix")*Math.max(0,30.97-cph);
+    var mem=n("mem")*Math.max(0,24-cph);
+    var zoom=n("zoom")*14.99;
+    var spon=n("sptgt")-n("spnow");
+    var rooms=n("rooms")||1;
+    var perRoomIncome=n("mgmt")/rooms;
+    var perRoomCost=n("tcost")/rooms;
+    var f=parseFloat(document.getElementById("absorb").value);
+    var perRoom=perRoomIncome-(1-f)*perRoomCost;
+    var perProp=perRoom*n("rpp");
+    var prop=perProp*n("nprop");
+    var save=n("save");
+    var total=tix+mem+zoom+spon+prop+save;
+    document.getElementById("o_cph").textContent="";
+    document.getElementById("o_tix").textContent=gbp(tix)+"/mo";
+    document.getElementById("o_mem").textContent=gbp(mem)+"/mo";
+    document.getElementById("o_zoom").textContent=gbp(zoom)+"/mo";
+    document.getElementById("o_spon").textContent=gbp(spon)+"/mo";
+    document.getElementById("o_perroom").textContent=gbp(perRoom)+"/room";
+    document.getElementById("o_perprop").textContent=gbp(perProp)+" each";
+    document.getElementById("o_prop").textContent=gbp(prop)+"/mo";
+    document.getElementById("o_save").textContent=gbp(save)+"/mo";
+    document.getElementById("o_total").textContent=gbp(total);
+    var gap=6000-total, box=document.getElementById("gapbox");
+    document.getElementById("o_gap").textContent = gap>0 ? gbp(gap)+" short" : gbp(-gap)+" over";
+    box.className="gap "+(gap>0?"short":"clear");
+  }
+  function snapshot(){var o={};ids.forEach(function(i){o[i]=document.getElementById(i).value;});return o;}
+  function apply(o){if(!o)return;ids.forEach(function(i){if(o[i]!==undefined&&o[i]!==null)document.getElementById(i).value=o[i];});calc();}
+  ids.forEach(function(i){var e=document.getElementById(i);e.addEventListener("input",calc);e.addEventListener("change",calc);});
+  calc();
+
+  var ref=null, msg=document.getElementById("savemsg"), btn=document.getElementById("savebtn");
+  try{var local=localStorage.getItem("wai6k");if(local)apply(JSON.parse(local));}catch(e){}
+  btn.addEventListener("click",function(){
+    var data=snapshot();
+    try{localStorage.setItem("wai6k",JSON.stringify(data));}catch(e){}
+    if(ref){ref.set(data).then(function(){msg.textContent="Saved. You will both see the same numbers.";})
+      .catch(function(){msg.textContent="Saved on this device only.";});}
+    else{msg.textContent="Saved on this device.";}
+  });
+  (async function(){
+    try{
+      if(typeof claude==="undefined"||!claude.use)return;
+      var db=await claude.use("db"); if(!db)return;
+      ref=db.doc("numbers/current");
+      var snap=await ref.get();
+      if(snap&&snap.exists)apply(snap.data());
+      msg.textContent="Saved here for both of you.";
+    }catch(e){}
+  })();
+})();
+</script>
 
 </body>
 </html>
