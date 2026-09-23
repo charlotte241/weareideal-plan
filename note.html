@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Note, 23 September</title>
+<style>
+  /* Ideal Urban brand book 2025. Palette and type used exactly as specified. */
+  :root{
+    --offwhite:#F6EDEA;
+    --urban-green:#9DB4AB;
+    --green:#A7D8BC;
+    --urban-blue:#51657D;
+    --blue:#84B1D4;
+    --terra:#DB7D59;
+    --black:#000000;
+    --paper:#FFFFFF;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:Calibri,Carlito,"Segoe UI",system-ui,-apple-system,sans-serif;
+    --mute:rgba(0,0,0,.62);
+    --faint:rgba(0,0,0,.45);
+    --rule:rgba(81,101,125,.22);
+    --rule2:rgba(81,101,125,.4);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --offwhite:#2A343F; --paper:#333E4A; --black:#F6EDEA;
+    --mute:rgba(246,237,234,.72); --faint:rgba(246,237,234,.55);
+    --rule:rgba(157,180,171,.28); --rule2:rgba(157,180,171,.45);
+    --urban-blue:#84B1D4;
+  }}
+  :root[data-theme="dark"]{
+    --offwhite:#2A343F; --paper:#333E4A; --black:#F6EDEA;
+    --mute:rgba(246,237,234,.72); --faint:rgba(246,237,234,.55);
+    --rule:rgba(157,180,171,.28); --rule2:rgba(157,180,171,.45);
+    --urban-blue:#84B1D4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--offwhite);color:var(--black);font-family:var(--sans);font-size:17px;line-height:1.55}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
+  p{margin:0}
+  .wrap{max-width:940px;margin:0 auto;padding:40px 24px 80px}
+
+  .mark{font-family:var(--serif);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--urban-blue);margin-bottom:26px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
+  h1{font-size:42px;margin-bottom:12px}
+  .sub{color:var(--mute);font-size:18px;max-width:58ch;margin-bottom:30px}
+
+  .goal{background:var(--urban-blue);color:#fff;border-radius:4px;padding:26px 30px;margin-bottom:12px}
+  .goal .k{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+  .goal .big{font-family:var(--serif);font-size:36px;display:block;margin:8px 0 6px}
+  .goal p{color:rgba(255,255,255,.85);font-size:16px;max-width:62ch}
+
+  h2.sec{font-size:27px;margin:44px 0 4px;padding-top:22px;border-top:2px solid var(--rule2)}
+  .secsub{color:var(--faint);font-size:15px;margin-bottom:16px}
+
+  table{width:100%;border-collapse:collapse;font-size:16px}
+  th{text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:0 14px 8px 0;border-bottom:1px solid var(--rule2)}
+  th.n,td.n{text-align:right}
+  td{padding:11px 14px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+  td.m{font-weight:700;width:38%}
+  td.s{color:var(--faint);font-size:14.5px;white-space:nowrap}
+  td.c{font-weight:700;color:var(--urban-blue);font-variant-numeric:tabular-nums}
+
+  .ask{background:var(--paper);border-left:4px solid var(--urban-green);border-radius:0 4px 4px 0;padding:16px 20px;margin:12px 0}
+  .ask b{display:block;font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:6px}
+  .ask ul{margin:0;padding-left:18px;color:var(--mute);font-size:16px}
+  .ask li{margin:6px 0}
+
+  .note{border:1px solid var(--terra);border-radius:4px;padding:16px 20px;margin:20px 0;font-size:16px;color:var(--black);background:rgba(219,125,89,.09)}
+
+  .ph{background:var(--paper);border:1px solid var(--rule2);border-radius:4px;padding:20px 24px;margin:14px 0}
+  .ph h3{font-size:22px;margin-bottom:2px}
+  .ph .when{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+  .ph ul{margin:0;padding-left:18px;font-size:16px}
+  .ph li{margin:6px 0}
+  .ph .open{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule);font-size:15px;color:var(--mute)}
+  .ph .open b{color:var(--black)}
+
+  .src{font-size:14px;color:var(--faint);margin-top:10px}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--faint)}
+  @media(max-width:620px){.wrap{padding:24px 16px 60px}h1{font-size:31px}body{font-size:16px}td.m{width:auto}table{font-size:15px}td,th{padding-right:8px}}
+</style>
+<style>
+  .back{display:inline-block;margin-top:34px;font-size:15px;color:var(--urban-blue);text-decoration:none;border-bottom:1px solid var(--urban-blue);padding-bottom:1px}
+  .lead{font-size:19px;line-height:1.5;margin-bottom:6px}
+  .blk{background:var(--paper);border-left:4px solid var(--urban-green);border-radius:0 4px 4px 0;padding:16px 20px;margin:12px 0;font-size:16px}
+  .blk b{display:block;font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:5px}
+  .stack p + p{margin-top:14px}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<div class="mark">We Are Ideal</div>
+
+<div class="eyebrow">Note &middot; 23 September 2026</div>
+<h1>What changed after your feedback</h1>
+
+<div class="stack">
+<p class="lead">Lisa, thanks for the voice note. Nothing negative about it. You were right on two things and both of them mattered.</p>
+</div>
+
+<div class="blk"><b>Landlords</b>
+Registered providers and HMO landlords were being treated as one activity in that plan. They are two different lists on two different timescales. Out.
+</div>
+
+<div class="blk"><b>Zoom</b>
+Off the plan until the experience works. Two refunds is a reason to fix it, not to sell more of it.
+</div>
+
+<div class="blk"><b>Sponsors</b>
+Your per sponsor figures changed the picture completely. Sponsorship is your second biggest income line and it has never been priced. Mithila, your half year numbers are in the main document now with everything else.
+</div>
+
+<h2 class="sec">What I need from you</h2>
+<p class="secsub">Three things. Everything else can wait.</p>
+<table>
+<tr><td class="m">Lisa</td><td>What each of the fourteen sponsors gets today, what they pay, and when each one renews.</td></tr>
+<tr><td class="m">Mithila</td><td>How the £13,247 splits between tickets and membership.</td></tr>
+<tr><td class="m">Both</td><td>Who owns what. You said you would settle it between you.</td></tr>
+</table>
+
+<div class="note">
+<b>One thing before the architect.</b> Whatever number you say first becomes the ceiling for the other thirteen. Worth deciding it before you are in the room rather than in it.
+</div>
+
+<h2 class="sec">Where everything lives now</h2>
+<p class="secsub">The 90 day plan is gone. One document instead.</p>
+<p>It holds what we know and where each figure came from, what is still open, and the three phases. It updates in place, so the link is always current. Notes like this one sit alongside it.</p>
+<a class="back" href="./">Open the main document</a>
+
+<footer>
+The Sourc3 for Ideal Urban Ltd. Where property and purpose meet.
+</footer>
+
+</div>
+
+</body>
+</html>
